@@ -1,0 +1,8 @@
+HealthApp.MainActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
+HealthApp.MainActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
+HealthApp.MainActivity;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
+healthapp.MainActivity;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
+HealthApp.ProfileActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity
+HealthApp.ProfileActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity
+HealthApp.ProfileActivity;md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity
+healthapp.ProfileActivity;md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity

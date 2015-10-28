@@ -1,0 +1,7 @@
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\assemblies\HealthApp.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\assemblies\Mono.Android.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\assemblies\mscorlib.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\assemblies\System.Core.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\assemblies\System.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\assemblies\System.Xml.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\assemblies\System.Xml.Linq.dll
