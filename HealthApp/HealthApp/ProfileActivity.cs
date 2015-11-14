@@ -15,12 +15,46 @@ namespace HealthApp
     [Activity(Label = "ProfileActivity")]
     public class ProfileActivity : Activity
     {
+        IList<string> persistentData, loginData;
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
-            SetContentView(Resource.Layout.ProfilePage);
 
+            base.OnCreate(bundle);
+            persistentData = Intent.GetStringArrayListExtra("persistent data");
+            loginData = Intent.GetStringArrayListExtra("login data");
+            SetContentView(Resource.Layout.ProfilePage);
+            Button schedAppt = FindViewById<Button>(Resource.Id.schedAppt);
+            Button viewAppt = FindViewById<Button>(Resource.Id.viewAppt);
             // Create your application here
+            schedAppt.Click += SchedAppt_Click;
+            viewAppt.Click += ViewAppt_Click;
+        }
+
+        private void ViewAppt_Click(object sender, EventArgs e)
+        {
+            List<string> recieved = new List<string>();
+            List<string> data = new List<string>();
+            Core myCore = new Core(persistentData);
+            data.Add("02");
+            data.Add(persistentData[1]);
+            recieved = myCore.messageHandler(data);
+            Intent myIntent = new Intent(this, typeof(ViewAppointments));
+            myIntent.PutStringArrayListExtra("appointments list", recieved);
+            myIntent.PutStringArrayListExtra("persistent data", persistentData);
+            StartActivity(myIntent);
+        }
+
+        private void SchedAppt_Click(object sender, EventArgs e)
+        {
+            List<string> recieved = new List<string>();
+            List<string> data = new List<string>();
+            Core myCore = new Core(persistentData);
+            data.Add("04");
+            recieved = myCore.messageHandler(data);
+            Intent myIntent = new Intent(this, typeof(ScheduleAppointment));
+            myIntent.PutStringArrayListExtra("doctor list", recieved);
+            myIntent.PutStringArrayListExtra("persistent data", persistentData);
+            StartActivity(myIntent);
         }
     }
 }

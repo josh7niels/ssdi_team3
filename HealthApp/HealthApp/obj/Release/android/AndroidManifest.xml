@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="HealthApp.HealthApp" android:versionCode="1" android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="11" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:label="UNCC HealthApp" android:icon="@drawable/icon" android:debuggable="false" android:name="mono.android.app.Application">
+    <activity android:icon="@drawable/icon" android:label="HealthApp" android:name="md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="ProfileActivity" android:name="md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity" />
+    <activity android:label="ScheduleAppointment" android:name="md55a3b4471d8a42dd4103a971db2ef04d1.ScheduleAppointment" />
+    <activity android:label="ViewAppointments" android:name="md55a3b4471d8a42dd4103a971db2ef04d1.ViewAppointments" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="HealthApp.HealthApp.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

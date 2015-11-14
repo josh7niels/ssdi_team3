@@ -2,7 +2,6 @@ C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\bin\Deb
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\bin\Debug\HealthApp.pdb
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\bin\Debug\HealthApp.HealthApp.apk
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\bin\Debug\HealthApp.HealthApp-Signed.apk
-C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Debug\HealthApp.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Debug\HealthApp.dll
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Debug\HealthApp.pdb
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Debug\android\bin\HealthApp.HealthApp.apk
@@ -12,3 +11,4 @@ C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Deb
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Debug\res\drawable\icon.png
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Debug\R.cs.flag
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\HealthApp\HealthApp\obj\Debug\uploadflags.txt
+C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Debug\res\layout\scheduleappointment.xml
