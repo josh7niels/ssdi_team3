@@ -38,6 +38,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookAppointment.cs" />
+    <Compile Include="dbConnect.cs" />
     <Compile Include="DeleteAppointment.cs" />
     <Compile Include="FindAppointments.cs" />
     <Compile Include="FindDates.cs" />

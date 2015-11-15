@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,17 @@ namespace Server
     class FindDates : IMessage
     {
         string doctor;
-        List<string> availableDateList = new List<string>();
+        List<string> sendBack = new List<string>();
         List<string> dateList = new List<string>();
         MySqlConnection con = null;
         MySqlCommand cmd = null;
         MySqlDataReader reader = null;
-        string str = "Server=localhost;Database=health;Uid=root;Pwd=mustang;";
+        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public FindDates(string doc)
         {
             doctor = doc;
-            getDates();
         }
-        private void getDates()
+        public List<string> execute()
         {
             dateList.Add("05");
             try
@@ -54,25 +54,22 @@ namespace Server
                     DateTime d1 = dat.AddDays(i);
                     string d = d1.ToString();
                     string e = d.Split(' ').First();
-                    availableDateList.Add(e);
+                    sendBack.Add(e);
                 }
                 foreach (string date in dateList)
                 {
-                    availableDateList.Remove(date);
+                    sendBack.Remove(date);
                 }
                 reader.Close();
                 con.Close();
+                sendBack.Insert(0, "05");
+                return sendBack;
             }
             catch (MySqlException err)
             {
                 throw err;
             }
 
-        }
-        public List<string> getResponse()
-        {
-            availableDateList.Insert(0, "05");
-            return availableDateList;
         }
     }
 }

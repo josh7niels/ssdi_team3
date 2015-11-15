@@ -1,9 +1,0 @@
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\bin\Debug\ServerTests.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\bin\Debug\ServerTests.pdb
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\bin\Debug\Server.exe
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\bin\Debug\MySql.Data.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\bin\Debug\Server.pdb
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\obj\Debug\ServerTests.csprojResolveAssemblyReference.cache
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\obj\Debug\ServerTests.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\ServerTests\obj\Debug\ServerTests.pdb

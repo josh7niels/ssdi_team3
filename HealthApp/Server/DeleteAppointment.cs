@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,12 @@ namespace Server
         List<string> sendBack = new List<string>();
         MySqlConnection con = null;
         MySqlCommand cmd = null;
-        string str = "Server=localhost;Database=health;Uid=root;Pwd=mustang;";
+        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public DeleteAppointment(string id)
         {
             apptID = id;
-            delete();
         }
-        private void delete()
+        public List<string> execute()
         {
             Console.WriteLine("delete method");
             sendBack.Add("03");
@@ -45,9 +45,6 @@ namespace Server
             {
                 throw err;
             }
-        }
-        public List<string> getResponse()
-        {
             return sendBack;
         }
     }

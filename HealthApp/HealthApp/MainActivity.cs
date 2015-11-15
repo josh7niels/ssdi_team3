@@ -27,7 +27,6 @@ namespace HealthApp
         private void Login_Click(object sender, EventArgs e)
         {
             //declare variables for getting text from UI
-            TextView welcomeView = FindViewById<TextView>(Resource.Id.welcomeView);
             EditText usernameText = FindViewById<EditText>(Resource.Id.usernameText);
             EditText passwordText = FindViewById<EditText>(Resource.Id.passwordText);
             //EditText ipText = FindViewById<EditText>(Resource.Id.ipText);
@@ -45,13 +44,13 @@ namespace HealthApp
             data.Add(usernameText.Text);
             data.Add(passwordText.Text);
             recieved = myCore.messageHandler(data);
+            persistentData.Add(recieved[2]);
             //create new intent to start profile activity
             Intent myIntent = new Intent(this, typeof(ProfileActivity));
             myIntent.PutStringArrayListExtra("persistent data", persistentData);
             //Start profile activity is correct login data otherwise display incorrect username/password alert
             if (recieved[1] == "1")
             {
-                //welcomeView.Text = "Welcome " + recieved[2];
                 StartActivity(myIntent);
             }
             else

@@ -50,7 +50,7 @@ namespace HealthApp
         {
             //establishes connection using session ip, sends data, recieves data, returns to message handler
             TcpClient tcpclnt = new TcpClient();
-            byte[] recBuffer = new byte[1000];
+            byte[] recBuffer = new byte[2000];
             try
             {
                 tcpclnt = new TcpClient();

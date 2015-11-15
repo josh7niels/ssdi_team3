@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,10 @@ namespace Server
     {
         string doctor, patient, apptDate, apptTime;
         List<string> sendBack = new List<string>();
-        MySqlConnection con = null/*, con1 = null*/;
-        MySqlCommand cmd = null/*, cmd2 = null*/;
+        MySqlConnection con = null;
+        MySqlCommand cmd = null;
         MySqlDataReader reader = null;
-        string str = "Server=localhost;Database=health;Uid=root;Pwd=mustang;";
+        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public BookAppointment(string doc, string pat, string date, string time)
         {
             string[] a;
@@ -23,9 +24,8 @@ namespace Server
             doctor = doc;
             apptDate = a[2] + "-" + a[0] + "-" + a[1];
             apptTime = time;
-            book();
         }
-        private void book()
+        public List<string> execute()
         {
             sendBack.Add("07");
             string p_id = null;
@@ -53,32 +53,7 @@ namespace Server
                 reader.Close();
                 con.Close();
                 bookHelper(p_id);
-                /*Console.WriteLine("doctor id: " + p_id);
-                query = "INSERT INTO appointmentbookingdetail"
-                            + "(physician_id,patient_id,date,time,cause)"
-                            + " values (@physician_id,@patient_id,@date,@time,'regular check up');";
-                con1 = new MySqlConnection(str);
-                con1.Open();
-                cmd2 = new MySqlCommand(query, con1);
-                cmd2.Prepare();
-                cmd2.Parameters.AddWithValue("@physician_id", p_id);
-                cmd2.Parameters.AddWithValue("@patient_id", patient);
-                cmd2.Parameters.AddWithValue("@date", apptDate);
-                cmd2.Parameters.AddWithValue("@time", apptTime);
-                Console.WriteLine(p_id + ", " + patient + ", " + apptDate + ", " + apptTime);
-                //int numberOfRecords = cmd2.ExecuteNonQuery();
-                Console.WriteLine("second query executed");
-                if (cmd.ExecuteNonQuery() == 1)
-                    sendBack.Add("1");
-                else
-                    sendBack.Add("0");
-                Console.WriteLine("Complete... ready for sendback");
-            }
-            catch (MySqlException err)
-            {
-                throw err;
-            }
-            con1.Close();*/
+            return sendBack;
         }
         private void bookHelper(string p_id)
         {
@@ -106,10 +81,6 @@ namespace Server
                 throw e;
             }
             
-        }
-        public List<string> getResponse()
-        {
-            return sendBack;
         }
     }
 }

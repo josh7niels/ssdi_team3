@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,20 +11,18 @@ namespace Server
     class FindAppointments : IMessage
     {
         string username;
-        List<string> apptList = new List<string>();
+        List<string> sendBack = new List<string>();
         MySqlConnection con = null;
         MySqlCommand cmd = null;
         MySqlDataReader reader = null;
-        string str = "Server=localhost;Database=health;Uid=root;Pwd=mustang;";
+        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public FindAppointments(string un)
         {
             username = un;
-            displayAppointments();
-            
         }
-        private void displayAppointments()
+        public List<string> execute()
         {
-            apptList.Add("02");
+            sendBack.Add("02");
             try
             {
                 string query = "select appointment_id,physician_id,date,time,cause from appointmentbookingdetail where patient_id=@patient_id order by appointment_id desc;";
@@ -40,7 +39,7 @@ namespace Server
                     {
                         string temp = reader.GetString(2).Split(' ').First();
                         string appts = reader.GetString(0) + "," +  reader.GetString(1) + "," + temp + "," + reader.GetString(3) + "," + reader.GetString(4);
-                        apptList.Add(appts);
+                        sendBack.Add(appts);
                     }
                 }
                 reader.Close();
@@ -51,11 +50,7 @@ namespace Server
             {
                 throw err;
             }
-        }
-
-        public List<string> getResponse()
-        {
-            return apptList;
+            return sendBack;
         }
     }
 }

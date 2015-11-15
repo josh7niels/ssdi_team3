@@ -40,7 +40,7 @@ namespace Server
                     MessageFactory factory = new MessageFactory(dataList);
                     IMessage myType = factory.GetMessageType();
                     dataList.Clear();
-                    dataList = myType.getResponse();
+                    dataList = myType.execute();
                     byte[] r = message_format(dataList);
                     for (int i = 0; i < dataList.Count; i++)
                         Console.WriteLine(dataList[i]);

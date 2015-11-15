@@ -15,16 +15,17 @@ namespace HealthApp
     [Activity(Label = "ProfileActivity")]
     public class ProfileActivity : Activity
     {
-        IList<string> persistentData, loginData;
+        IList<string> persistentData;
         protected override void OnCreate(Bundle bundle)
         {
 
             base.OnCreate(bundle);
             persistentData = Intent.GetStringArrayListExtra("persistent data");
-            loginData = Intent.GetStringArrayListExtra("login data");
             SetContentView(Resource.Layout.ProfilePage);
+            TextView welcome = FindViewById<TextView>(Resource.Id.welcomeView);
             Button schedAppt = FindViewById<Button>(Resource.Id.schedAppt);
             Button viewAppt = FindViewById<Button>(Resource.Id.viewAppt);
+            welcome.Text = ("Welcome " + persistentData[2].Split(' ').First());
             // Create your application here
             schedAppt.Click += SchedAppt_Click;
             viewAppt.Click += ViewAppt_Click;

@@ -8,6 +8,6 @@ namespace Server
 {
     interface IMessage
     {
-        List<string> getResponse();
+        List<string> execute();
     }
 }

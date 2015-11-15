@@ -15,7 +15,7 @@ namespace Server
         }
         public IMessage GetMessageType()
         {
-            IMessage myMessage;
+            IMessage myMessage = null;
             switch (message[0])
             {
                 case "01": //send username and password as two separate arguments to the validation method
@@ -33,8 +33,8 @@ namespace Server
                     break;
                 case "07": myMessage = new BookAppointment(message[1], message[2], message[3], message[4]);
                     break;
-                default: myMessage = new LoginValidation("abc","123");
-                    break;
+                /*default: myMessage = new LoginValidation("abc","123");
+                    break;*/
             }
             return myMessage;
         }

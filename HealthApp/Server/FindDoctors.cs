@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,18 +10,17 @@ namespace Server
 {
     class FindDoctors : IMessage
     {
-        List<string> docList = new List<string>();
+        List<string> sendBack = new List<string>();
         MySqlConnection con = null;
         MySqlCommand cmd = null;
         MySqlDataReader reader = null;
-        string str = "Server=localhost;Database=health;Uid=root;Pwd=mustang;";
+        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public FindDoctors()
         {
-            getDoctors();
         }
-        private void getDoctors()
+        public List<string> execute()
         {
-            docList.Add("04");
+            sendBack.Add("04");
             try
             {
                 string query = "SELECT concat(first_name,' ',last_name) from user where role='D';";
@@ -34,7 +34,7 @@ namespace Server
                 {
                     while (reader.Read())
                     {
-                        docList.Add(reader.GetString(0));
+                        sendBack.Add(reader.GetString(0));
 
                     }
                 }
@@ -45,10 +45,7 @@ namespace Server
             {
                 throw err;
             }
-        }
-        public List<string> getResponse()
-        {
-            return docList;
+            return sendBack;
         }
     }
 }

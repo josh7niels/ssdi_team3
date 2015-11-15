@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,13 @@ namespace Server
         MySqlConnection con = null;
         MySqlCommand cmd = null;
         MySqlDataReader reader = null;
-        string str = "Server=localhost;Database=health;Uid=root;Pwd=mustang;";
+        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public LoginValidation(string un, string pass)
         {
             username = un;
             password = pass;
-            validate_Login();
         }
-        private void validate_Login()
+        public List<string> execute()
         {
             sendBack.Add("01");
             string query = "Select concat(first_name,' ',last_name) from user u join login l on u.u_id=l.u_id where l.u_id=@u_id and binary l.password = @password;";
@@ -52,9 +52,6 @@ namespace Server
 
             con.Close();
             reader.Close();
-        }
-        public List<string> getResponse()
-        {
             return sendBack;
         }
     }

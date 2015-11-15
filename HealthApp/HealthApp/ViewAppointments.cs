@@ -26,6 +26,7 @@ namespace HealthApp
             apptList = Intent.GetStringArrayListExtra("appointments list");
             persistentData = Intent.GetStringArrayListExtra("persistent data");
             string[] myArray;
+            int a = apptList.Count;
             for(int i=1; i<apptList.Count; i++)
             {
                 myArray = apptList[i].Split(',');

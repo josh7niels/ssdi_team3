@@ -14,12 +14,13 @@ namespace Server.Tests
         [TestMethod()]
         public void BookAppointmentTest()
         {
-            BookAppointment appt = new BookAppointment("a","b","c","d");
+            BookAppointment my = new BookAppointment("Magdellena Billiska", "mnaga@uncc.edu", "2015-12-04", "09:00:00");
+
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void getResponseTest()
+        public void executeTest()
         {
             Assert.Fail();
         }
