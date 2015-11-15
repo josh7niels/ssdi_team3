@@ -121,7 +121,9 @@ namespace HealthApp
             alert.SetMessage(message);
             alert.SetPositiveButton("Ok", (senderAlert, args) =>
             {
-                //do nothing, return to view
+                Intent intent = new Intent(this, typeof(ProfileActivity));
+                intent.PutStringArrayListExtra("persistent data", persistentData);
+                StartActivity(intent);
             });
             RunOnUiThread(() =>
             {

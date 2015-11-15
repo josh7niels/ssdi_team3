@@ -19,7 +19,7 @@ namespace Server
         public FindDates(string doc)
         {
             doctor = doc;
-            //getDates();
+            getDates();
         }
         private void getDates()
         {
@@ -39,10 +39,12 @@ namespace Server
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    Console.WriteLine("has rows");
+                    string a,b;
                     while (reader.Read())
                     {
-                        dateList.Add(reader.GetString(0));
+                        a = reader.GetString(0);
+                        b = a.Split(' ').First();
+                        dateList.Add(b);
 
                     }
                 }
@@ -51,9 +53,8 @@ namespace Server
                 {
                     DateTime d1 = dat.AddDays(i);
                     string d = d1.ToString();
-                    Console.WriteLine(d);
-                    //if(d1.)
-                    availableDateList.Add(d);
+                    string e = d.Split(' ').First();
+                    availableDateList.Add(e);
                 }
                 foreach (string date in dateList)
                 {

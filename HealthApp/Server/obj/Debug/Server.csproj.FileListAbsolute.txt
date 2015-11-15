@@ -5,3 +5,9 @@ C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\bin\Debug\MyS
 C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.exe
 C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.pdb
 C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Debug\Server.exe.config
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Debug\Server.exe
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Debug\Server.pdb
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Debug\MySql.Data.dll
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\obj\Debug\Server.exe
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\obj\Debug\Server.pdb

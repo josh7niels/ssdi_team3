@@ -17,9 +17,11 @@ namespace Server
         string str = "Server=localhost;Database=health;Uid=root;Pwd=mustang;";
         public BookAppointment(string doc, string pat, string date, string time)
         {
+            string[] a;
+            a = date.Split('/');
             patient = pat;
             doctor = doc;
-            apptDate = date;
+            apptDate = a[2] + "-" + a[0] + "-" + a[1];
             apptTime = time;
             book();
         }
@@ -80,19 +82,19 @@ namespace Server
         }
         private void bookHelper(string p_id)
         {
+            Console.WriteLine("Book Helper");
             con = new MySqlConnection(str);
             con.Open();
             try
             {
-                string query = "INSERT INTO appointmentbookingdetail"
-                            + "(physician_id,patient_id,date,time,cause)"
-                            + " values (@physician_id,@patient_id,@date,@time,'regular check up');";
+                string query = "INSERT INTO appointmentbookingdetail (physician_id,patient_id,date,time,cause) values (@physician_id,@patient_id,@date,@time,'regular check up');";
                 cmd = new MySqlCommand(query, con);
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@physician_id", p_id);
                 cmd.Parameters.AddWithValue("@patient_id", patient);
                 cmd.Parameters.AddWithValue("@date", apptDate);
                 cmd.Parameters.AddWithValue("@time", apptTime);
+                Console.WriteLine("Book Helper - execute query");
                 if (cmd.ExecuteNonQuery() == 1)
                     sendBack.Add("1");
                 else

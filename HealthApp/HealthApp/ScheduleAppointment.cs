@@ -110,6 +110,7 @@ namespace HealthApp
             List<string> data = new List<string>();
             Core myCore = new Core(persistentData);
             data.Add("06");
+            data.Add(selectedDoctor);
             data.Add(selectedDate);
             recieved = myCore.messageHandler(data);
             recieved.RemoveAt(0);
@@ -122,6 +123,7 @@ namespace HealthApp
             Spinner spinner = (Spinner)sender;
             selectedTime = timeList[e.Position];
             schedApptButton.Visibility = ViewStates.Visible;
+            schedApptButton.Enabled = true;
         }
     }
 }

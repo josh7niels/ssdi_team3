@@ -4,3 +4,9 @@ C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\bin\Release\S
 C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\bin\Release\MySql.Data.dll
 C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\obj\Release\Server.exe
 C:\Users\Admin\documents\visual studio 2015\Projects\Server\Server\obj\Release\Server.pdb
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Release\Server.exe.config
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Release\Server.exe
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Release\Server.pdb
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Release\MySql.Data.dll
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\obj\Release\Server.exe
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\obj\Release\Server.pdb

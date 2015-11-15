@@ -1,5 +1,5 @@
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Release\android\assets\HealthApp.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Release\android\assets\Mono.Android.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Release\android\assets\mscorlib.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Release\android\assets\System.Core.dll
-C:\Users\Admin\documents\visual studio 2015\Projects\HealthApp\HealthApp\obj\Release\android\assets\System.dll
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\android\assets\HealthApp.dll
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\android\assets\Mono.Android.dll
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\android\assets\mscorlib.dll
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\android\assets\System.Core.dll
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\android\assets\System.dll

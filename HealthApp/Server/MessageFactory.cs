@@ -31,8 +31,7 @@ namespace Server
                     break;
                 case "06": myMessage = new FindTimes(message[1], message[2]);
                     break;
-                case "07": Console.WriteLine("case 07 reached");
-                    myMessage = new BookAppointment(message[1], message[2], message[3], message[4]);
+                case "07": myMessage = new BookAppointment(message[1], message[2], message[3], message[4]);
                     break;
                 default: myMessage = new LoginValidation("abc","123");
                     break;
