@@ -8,14 +8,11 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class LoginValidation : IMessage
+    public class LoginValidation : IMessage
     {
         List<string> sendBack = new List<string>();
+        List<string> databaseResponse = new List<string>();
         string username, password;
-        MySqlConnection con = null;
-        MySqlCommand cmd = null;
-        MySqlDataReader reader = null;
-        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public LoginValidation(string un, string pass)
         {
             username = un;
@@ -23,35 +20,16 @@ namespace Server
         }
         public List<string> execute()
         {
-            sendBack.Add("01");
             string query = "Select concat(first_name,' ',last_name) from user u join login l on u.u_id=l.u_id where l.u_id=@u_id and binary l.password = @password;";
-            con = new MySqlConnection(str);
-            con.Open();  //open the connection
-            cmd = new MySqlCommand(query, con);
-            cmd.Prepare();
-            try
-            {
-                //we will bound a value to the placeholder
-                cmd.Parameters.AddWithValue("@u_id", username);
-                cmd.Parameters.AddWithValue("@password", password);
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine("Error: " + err.ToString());
-            }
-
-            if (reader.Read())
-            {
-                sendBack.Add("1");
-                sendBack.Add(reader.GetString(0));
-            }
-            else
-                sendBack.Add("0");
-
-            con.Close();
-            reader.Close();
+            MySqlCommand a = new MySqlCommand(query);
+            a.Parameters.AddWithValue("@u_id", username);
+            a.Parameters.AddWithValue("@password", password);
+            databaseCommunicator myDB = new databaseCommunicator(a, "01");
+            databaseResponse = myDB.executeQuery();
+            sendBack.Add("01");
+            sendBack.Add(databaseResponse[0]);
+            sendBack.Add(databaseResponse[1]);
+            
             return sendBack;
         }
     }

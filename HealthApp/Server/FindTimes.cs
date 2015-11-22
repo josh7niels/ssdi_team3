@@ -12,10 +12,7 @@ namespace Server
     {
         string apptDate, doctor;
         List<string> sendBack = new List<string> { "09:00:00", "10:00:00", "11:00:00", "12:00:00", "01:00:00", "02:00:00", "03:00:00", "04:00:00", "05:00:00"};
-        MySqlConnection con = null;
-        MySqlCommand cmd = null;
-        MySqlDataReader reader = null;
-        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
+        List<string> databaseResponse = new List<string>();
         public FindTimes(string date, string doc)
         {
             apptDate = date;
@@ -23,36 +20,15 @@ namespace Server
         }
         public List<string> execute()
         {
-            List<string> timeList = new List<string>();
-            try
+            string query = "select time from appointmentbookingdetail a join user u on u.u_id=a.physician_id where concat(first_name, ' ', last_name) = @fn and  date = @date;";
+            MySqlCommand a = new MySqlCommand(query);
+            a.Parameters.AddWithValue("@date", apptDate);
+            a.Parameters.AddWithValue("@fn", doctor);
+            databaseCommunicator myDB = new databaseCommunicator(a, "06");
+            databaseResponse = myDB.executeQuery();
+
+            foreach (string s in databaseResponse)
             {
-                string query = "select time from appointmentbookingdetail a join user u on u.u_id=a.physician_id where concat(first_name, ' ', last_name) = @fn and  date = @date;";
-                con = new MySqlConnection(str);
-                con.Open();
-                cmd = new MySqlCommand(query, con);
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@date", apptDate);//binding parameter selected date
-                cmd.Parameters.AddWithValue("@fn", doctor);//binding parameter selected name
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        timeList.Add(reader.GetString(0));
-                    }
-                }                
-                reader.Close();
-                con.Close();
-            }
-            catch (MySqlException err)
-            {
-                throw err;
-            }
-            Console.WriteLine(".............from list of time slots booked.......");
-            foreach (string s in timeList)
-            {
-                Console.WriteLine(s);
                 sendBack.Remove(s);
             }
             sendBack.Insert(0, "06");

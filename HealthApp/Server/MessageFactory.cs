@@ -8,14 +8,13 @@ namespace Server
 {
     class MessageFactory
     {
-        List<string> message = new List<string>();
-        public MessageFactory(List<string> recieved)
+        //List<string> message = new List<string>();
+        private static IMessage myMessage = null;
+        private MessageFactory()
         {
-            message = recieved;
         }
-        public IMessage GetMessageType()
+        public static IMessage GetMessageInstance(List<string> message)
         {
-            IMessage myMessage = null;
             switch (message[0])
             {
                 case "01": //send username and password as two separate arguments to the validation method

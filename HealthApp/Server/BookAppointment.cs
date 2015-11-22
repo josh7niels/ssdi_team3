@@ -18,15 +18,20 @@ namespace Server
         string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
         public BookAppointment(string doc, string pat, string date, string time)
         {
-            string[] a;
-            a = date.Split('/');
             patient = pat;
             doctor = doc;
-            apptDate = a[2] + "-" + a[0] + "-" + a[1];
+            apptDate = date;
             apptTime = time;
+        }
+        private void convertDate()
+        {
+            string[] a;
+            a = apptDate.Split('/');
+            apptDate = a[2] + "-" + a[0] + "-" + a[1];
         }
         public List<string> execute()
         {
+            convertDate();
             sendBack.Add("07");
             string p_id = null;
             try

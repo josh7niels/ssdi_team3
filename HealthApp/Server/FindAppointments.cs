@@ -12,44 +12,24 @@ namespace Server
     {
         string username;
         List<string> sendBack = new List<string>();
-        MySqlConnection con = null;
-        MySqlCommand cmd = null;
-        MySqlDataReader reader = null;
-        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
+        List<string> databaseResponse = new List<string>();
         public FindAppointments(string un)
         {
             username = un;
         }
         public List<string> execute()
         {
+            string query = "select appointment_id,physician_id,date,time,cause from appointmentbookingdetail where patient_id=@patient_id order by appointment_id desc;";
+            MySqlCommand a = new MySqlCommand(query);
+            a.Parameters.AddWithValue("@patient_id", username);
+            databaseCommunicator myDB = new databaseCommunicator(a, "02");
+            databaseResponse = myDB.executeQuery();
             sendBack.Add("02");
-            try
+            for(int i=0; i<databaseResponse.Count; i++)
             {
-                string query = "select appointment_id,physician_id,date,time,cause from appointmentbookingdetail where patient_id=@patient_id order by appointment_id desc;";
-                con = new MySqlConnection(str);
-                con.Open();
-                cmd = new MySqlCommand(query, con);
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@patient_id", username);
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        string temp = reader.GetString(2).Split(' ').First();
-                        string appts = reader.GetString(0) + "," +  reader.GetString(1) + "," + temp + "," + reader.GetString(3) + "," + reader.GetString(4);
-                        sendBack.Add(appts);
-                    }
-                }
-                reader.Close();
-                con.Close();
+                sendBack.Add(databaseResponse[i]);
             }
 
-            catch (MySqlException err)
-            {
-                throw err;
-            }
             return sendBack;
         }
     }

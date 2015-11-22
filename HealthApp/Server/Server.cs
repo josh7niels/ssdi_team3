@@ -37,10 +37,10 @@ namespace Server
                     dataList = message_decode(buffer);
                     for (int i = 0; i < dataList.Count; i++)
                         Console.WriteLine(dataList[i]);
-                    MessageFactory factory = new MessageFactory(dataList);
-                    IMessage myType = factory.GetMessageType();
+                    //MessageFactory factory = new MessageFactory(dataList);
+                    IMessage messageInstance = MessageFactory.GetMessageInstance(dataList);
                     dataList.Clear();
-                    dataList = myType.execute();
+                    dataList = messageInstance.execute();
                     byte[] r = message_format(dataList);
                     for (int i = 0; i < dataList.Count; i++)
                         Console.WriteLine(dataList[i]);

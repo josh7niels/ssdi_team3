@@ -13,7 +13,7 @@ namespace HealthApp
     [Activity(Label = "HealthApp", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        string ip = "192.168.3.210";
+        string ip = "10.38.91.76";
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);

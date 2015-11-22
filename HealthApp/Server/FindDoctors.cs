@@ -11,40 +11,22 @@ namespace Server
     class FindDoctors : IMessage
     {
         List<string> sendBack = new List<string>();
-        MySqlConnection con = null;
-        MySqlCommand cmd = null;
-        MySqlDataReader reader = null;
-        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
+        List<string> databaseResponse = new List<string>();
         public FindDoctors()
         {
         }
         public List<string> execute()
         {
+            string query = "SELECT concat(first_name,' ',last_name) from user where role='D';";
+            MySqlCommand a = new MySqlCommand(query);
+            databaseCommunicator myDB = new databaseCommunicator(a, "04");
+            databaseResponse = myDB.executeQuery();
             sendBack.Add("04");
-            try
+            for (int i = 0; i < databaseResponse.Count; i++)
             {
-                string query = "SELECT concat(first_name,' ',last_name) from user where role='D';";
-                con = new MySqlConnection(str);
-                con.Open();
-                cmd = new MySqlCommand(query, con);
-                cmd.Prepare();
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        sendBack.Add(reader.GetString(0));
-
-                    }
-                }
-                reader.Close();
-                con.Close();
+                sendBack.Add(databaseResponse[i]);
             }
-            catch (MySqlException err)
-            {
-                throw err;
-            }
+            
             return sendBack;
         }
     }

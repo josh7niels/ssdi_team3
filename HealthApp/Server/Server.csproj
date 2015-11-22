@@ -49,12 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookAppointment.cs" />
-    <Compile Include="dbConnect.cs" />
+    <Compile Include="databaseCommunicator.cs" />
     <Compile Include="DeleteAppointment.cs" />
     <Compile Include="FindAppointments.cs" />
     <Compile Include="FindDates.cs" />
     <Compile Include="FindDoctors.cs" />
     <Compile Include="FindTimes.cs" />
+    <Compile Include="IDBConnect.cs" />
     <Compile Include="LoginValidation.cs" />
     <Compile Include="MessageFactory.cs" />
     <Compile Include="IMessage.cs" />
