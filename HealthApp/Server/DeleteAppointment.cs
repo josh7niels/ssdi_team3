@@ -13,17 +13,22 @@ namespace Server
         string apptID;
         List<string> sendBack = new List<string>();
         List<string> databaseResponse = new List<string>();
+        IDBConnect dbConnector = null;
         public DeleteAppointment(string id)
         {
             apptID = id;
+        }
+        public void setDBConnectInstance(IDBConnect db)
+        {
+            dbConnector = db;
         }
         public List<string> execute()
         {
             string query = "delete from appointmentbookingdetail where appointment_id = @appointment_id ;";
             MySqlCommand a = new MySqlCommand(query);
             a.Parameters.AddWithValue("@appointment_id", apptID);
-            databaseCommunicator myDB = new databaseCommunicator(a, "03");
-            databaseResponse = myDB.executeQuery();
+            dbConnector.setValues(a, "03");
+            databaseResponse = dbConnector.executeQuery();
             sendBack.Add("03");
             sendBack.Add(databaseResponse[0]);
             

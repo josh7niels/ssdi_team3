@@ -9,5 +9,6 @@ namespace Server
     interface IMessage
     {
         List<string> execute();
+        void setDBConnectInstance(IDBConnect db);
     }
 }

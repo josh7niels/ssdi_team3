@@ -12,16 +12,18 @@ namespace Server
     {
         string doctor, patient, apptDate, apptTime;
         List<string> sendBack = new List<string>();
-        MySqlConnection con = null;
-        MySqlCommand cmd = null;
-        MySqlDataReader reader = null;
-        string str = ConfigurationManager.AppSettings.Get("dbConnectionString");
+        List<string> databaseResponse = new List<string>();
+        IDBConnect dbConnector = null;
         public BookAppointment(string doc, string pat, string date, string time)
         {
             patient = pat;
             doctor = doc;
             apptDate = date;
             apptTime = time;
+        }
+        public void setDBConnectInstance(IDBConnect db)
+        {
+            dbConnector = db;
         }
         private void convertDate()
         {
@@ -32,60 +34,38 @@ namespace Server
         public List<string> execute()
         {
             convertDate();
+            string query = "Select u_id from user where concat(first_name, ' ', last_name) = @fn;";
+            MySqlCommand a = new MySqlCommand(query);
+            a.Parameters.AddWithValue("@fn", doctor);
+            dbConnector.setValues(a, "07");
+            databaseResponse = dbConnector.executeQuery();
+
+            string query2 = "INSERT INTO appointmentbookingdetail (physician_id,patient_id,date,time,cause) values (@physician_id,@patient_id,@date,@time,'regular check up');";
+            MySqlCommand b = new MySqlCommand(query2);
+            b.Parameters.AddWithValue("@physician_id", databaseResponse[0]);
+            b.Parameters.AddWithValue("@patient_id", patient);
+            b.Parameters.AddWithValue("@date", apptDate);
+            b.Parameters.AddWithValue("@time", apptTime);
+            dbConnector.setValues(b, "03");
+            databaseResponse.Clear();
+            databaseResponse = dbConnector.executeQuery();
+
+            //bookHelper(databaseResponse[0]);
             sendBack.Add("07");
-            string p_id = null;
-            try
-            {
-                string query = "Select u_id from user where concat(first_name, ' ', last_name) = @fn;";
-                con = new MySqlConnection(str);
-                con.Open();
-                cmd = new MySqlCommand(query, con);
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@fn", doctor);
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-                Console.WriteLine("reader executing...");
-                while (reader.Read())
-                {
-                    Console.WriteLine("reader reading...");
-                    p_id = reader.GetString(0);
-                }
-            }
-            catch(MySqlException e)
-            {
-                throw e;
-            }
-                reader.Close();
-                con.Close();
-                bookHelper(p_id);
+            sendBack.Add(databaseResponse[0]);
             return sendBack;
         }
         private void bookHelper(string p_id)
         {
-            Console.WriteLine("Book Helper");
-            con = new MySqlConnection(str);
-            con.Open();
-            try
-            {
-                string query = "INSERT INTO appointmentbookingdetail (physician_id,patient_id,date,time,cause) values (@physician_id,@patient_id,@date,@time,'regular check up');";
-                cmd = new MySqlCommand(query, con);
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue("@physician_id", p_id);
-                cmd.Parameters.AddWithValue("@patient_id", patient);
-                cmd.Parameters.AddWithValue("@date", apptDate);
-                cmd.Parameters.AddWithValue("@time", apptTime);
-                Console.WriteLine("Book Helper - execute query");
-                if (cmd.ExecuteNonQuery() == 1)
-                    sendBack.Add("1");
-                else
-                    sendBack.Add("0");
-
-            }
-            catch (MySqlException e)
-            {
-                throw e;
-            }
-            
+            string query = "INSERT INTO appointmentbookingdetail (physician_id,patient_id,date,time,cause) values (@physician_id,@patient_id,@date,@time,'regular check up');";
+            databaseResponse.Clear();
+            MySqlCommand a = new MySqlCommand(query);
+            a.Parameters.AddWithValue("@physician_id", p_id);
+            a.Parameters.AddWithValue("@patient_id", patient);
+            a.Parameters.AddWithValue("@date", apptDate);
+            a.Parameters.AddWithValue("@time", apptTime);
+            dbConnector.setValues(a, "03");
+            databaseResponse = dbConnector.executeQuery();
         }
     }
 }

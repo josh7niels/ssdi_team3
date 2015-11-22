@@ -13,10 +13,15 @@ namespace Server
         string apptDate, doctor;
         List<string> sendBack = new List<string> { "09:00:00", "10:00:00", "11:00:00", "12:00:00", "01:00:00", "02:00:00", "03:00:00", "04:00:00", "05:00:00"};
         List<string> databaseResponse = new List<string>();
+        IDBConnect dbConnector = null;
         public FindTimes(string date, string doc)
         {
             apptDate = date;
             doctor = doc;
+        }
+        public void setDBConnectInstance(IDBConnect db)
+        {
+            dbConnector = db;
         }
         public List<string> execute()
         {
@@ -24,9 +29,8 @@ namespace Server
             MySqlCommand a = new MySqlCommand(query);
             a.Parameters.AddWithValue("@date", apptDate);
             a.Parameters.AddWithValue("@fn", doctor);
-            databaseCommunicator myDB = new databaseCommunicator(a, "06");
-            databaseResponse = myDB.executeQuery();
-
+            dbConnector.setValues(a, "06");
+            databaseResponse = dbConnector.executeQuery();
             foreach (string s in databaseResponse)
             {
                 sendBack.Remove(s);

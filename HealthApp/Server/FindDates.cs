@@ -14,9 +14,14 @@ namespace Server
         List<string> sendBack = new List<string>();
         List<string> dateList = new List<string>();
         List<string> databaseResponse = new List<string>();
+        IDBConnect dbConnector = null;
         public FindDates(string doc)
         {
             doctor = doc;
+        }
+        public void setDBConnectInstance(IDBConnect db)
+        {
+            dbConnector = db;
         }
         public List<string> execute()
         {
@@ -26,8 +31,8 @@ namespace Server
                             + " group by physician_id,date having count(date) = 8 ;";
             MySqlCommand a = new MySqlCommand(query);
             a.Parameters.AddWithValue("@fn", doctor);
-            databaseCommunicator myDB = new databaseCommunicator(a, "05");
-            databaseResponse = myDB.executeQuery();
+            dbConnector.setValues(a, "05");
+            databaseResponse = dbConnector.executeQuery();
             string x,y;
             for (int i = 0; i < databaseResponse.Count; i++)
             {

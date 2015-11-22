@@ -40,6 +40,8 @@ namespace Server
                     //MessageFactory factory = new MessageFactory(dataList);
                     IMessage messageInstance = MessageFactory.GetMessageInstance(dataList);
                     dataList.Clear();
+                    IDBConnect dbConnector = new databaseCommunicator();
+                    messageInstance.setDBConnectInstance(dbConnector);
                     dataList = messageInstance.execute();
                     byte[] r = message_format(dataList);
                     for (int i = 0; i < dataList.Count; i++)

@@ -13,10 +13,15 @@ namespace Server
         List<string> sendBack = new List<string>();
         List<string> databaseResponse = new List<string>();
         string username, password;
+        IDBConnect dbConnector = null;
         public LoginValidation(string un, string pass)
         {
             username = un;
             password = pass;
+        }
+        public void setDBConnectInstance(IDBConnect db)
+        {
+            dbConnector = db;
         }
         public List<string> execute()
         {
@@ -24,8 +29,10 @@ namespace Server
             MySqlCommand a = new MySqlCommand(query);
             a.Parameters.AddWithValue("@u_id", username);
             a.Parameters.AddWithValue("@password", password);
-            databaseCommunicator myDB = new databaseCommunicator(a, "01");
-            databaseResponse = myDB.executeQuery();
+            //databaseCommunicator myDB = new databaseCommunicator(a, "01");
+            dbConnector.setValues(a, "01");
+            databaseResponse = dbConnector.executeQuery();
+            //databaseResponse = myDB.executeQuery();
             sendBack.Add("01");
             sendBack.Add(databaseResponse[0]);
             sendBack.Add(databaseResponse[1]);

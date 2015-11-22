@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{89B09EFF-5121-4026-9ABC-EA581FF20153}</ProjectGuid>
+    <ProjectGuid>{72195805-B856-4FAD-8A79-E5075FD959FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ServerTests</RootNamespace>
@@ -53,6 +53,12 @@
   <ItemGroup>
     <Compile Include="LoginValidationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Server\Server.csproj">
+      <Project>{FA6CF8F9-E0A7-457B-A72E-8603A14A2934}</Project>
+      <Name>Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

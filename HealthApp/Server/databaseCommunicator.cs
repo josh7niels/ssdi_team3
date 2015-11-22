@@ -8,13 +8,16 @@ using MySql.Data.MySqlClient;
 
 namespace Server
 {
-    class databaseCommunicator : IDBConnect
+    public class databaseCommunicator : IDBConnect
     {
         string type, conStr = ConfigurationManager.AppSettings.Get("dbConnectionString");
         List<string> sendBack = new List<string>();
         MySqlCommand cmd = null;
         MySqlDataReader reader = null;
-        public databaseCommunicator(MySqlCommand c, string t)
+        public databaseCommunicator()
+        {
+        }
+        public void setValues(MySqlCommand c, string t)
         {
             cmd = c;
             type = t;
@@ -28,16 +31,10 @@ namespace Server
             int count = 0;
             try
             {
-                count = cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine("Error: " + err.ToString());
-            }
-            switch(type)
-            {
-                case "01":
+                switch (type)
+                {
+                    case "01"://type could be "getOneValue"
+                        reader = cmd.ExecuteReader();
                         if (reader.Read())
                         {
                             sendBack.Add("1");
@@ -45,8 +42,9 @@ namespace Server
                         }
                         else
                             sendBack.Add("0");
-                    break;
-                case "02":
+                        break;
+                    case "02"://type could be "getAllMultiplePerEntry"
+                        reader = cmd.ExecuteReader();
                         if (reader.HasRows)
                         {
                             while (reader.Read())
@@ -56,24 +54,34 @@ namespace Server
                                 sendBack.Add(appts);
                             }
                         }
-                    break;
-                case "03":
+                        break;
+                    case "03"://type could be "getBoolean"
+                        count = cmd.ExecuteNonQuery();
                         if (count == 1)
                             sendBack.Add("1");
                         else
                             sendBack.Add("0");
-                    break;
-                case "04":
-                case "05":
-                case "06":
+                        break;
+                    case "04"://type could be "getAll"
+                    case "05":
+                    case "06":
+                    case "07":
+                        reader = cmd.ExecuteReader();
                         if (reader.HasRows)
                             while (reader.Read())
                                 sendBack.Add(reader.GetString(0));
-                    break;
+                        break;
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Error: " + err.ToString());
             }
 
             dbConnection.Close();
-            reader.Close();
+            if (reader != null)
+                reader.Close();
+            cmd.Dispose();
             return sendBack;
         }
     }
