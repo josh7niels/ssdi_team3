@@ -21,7 +21,7 @@ namespace Server.Tests
             IDBConnect dbConnector = new dbCommTEST();
             myLV.setDBConnectInstance(dbConnector);
             actual = myLV.execute();
-            //preapre expected values
+            //prepare expected values
             List<string> expected = new List<string>();
             expected.Add("01");
             expected.Add("1");

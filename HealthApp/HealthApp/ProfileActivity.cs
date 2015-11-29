@@ -25,10 +25,19 @@ namespace HealthApp
             TextView welcome = FindViewById<TextView>(Resource.Id.welcomeView);
             Button schedAppt = FindViewById<Button>(Resource.Id.schedAppt);
             Button viewAppt = FindViewById<Button>(Resource.Id.viewAppt);
+            Button forum = FindViewById<Button>(Resource.Id.Forum);
             welcome.Text = ("Welcome " + persistentData[2].Split(' ').First());
             // Create your application here
             schedAppt.Click += SchedAppt_Click;
             viewAppt.Click += ViewAppt_Click;
+            forum.Click += Forum_Click;
+        }
+
+        private void Forum_Click(object sender, EventArgs e)
+        {
+            Intent myIntent = new Intent(this, typeof(ForumActivity));
+            myIntent.PutStringArrayListExtra("persistent data", persistentData);
+            StartActivity(myIntent);
         }
 
         private void ViewAppt_Click(object sender, EventArgs e)

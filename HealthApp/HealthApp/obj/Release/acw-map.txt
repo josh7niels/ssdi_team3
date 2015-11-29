@@ -14,3 +14,7 @@ HealthApp.ViewAppointments, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAp
 HealthApp.ViewAppointments, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAppointments
 HealthApp.ViewAppointments;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAppointments
 healthapp.ViewAppointments;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAppointments
+HealthApp.ViewForumPosts, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
+HealthApp.ViewForumPosts, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
+HealthApp.ViewForumPosts;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
+healthapp.ViewForumPosts;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts

@@ -5,35 +5,28 @@
     android:layout_height="fill_parent"
     android:background="@android:color/white">
     <TextView
-        android:text="Welcome User"
+        android:text="Welcome to the Health Forum"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/welcomeView"
+        android:id="@+id/forumView"
         android:layout_marginBottom="0dp"
         android:layout_marginTop="0.0dp"
         android:textColor="@android:color/holo_green_dark"
         android:textColorHint="@android:color/background_light" />
     <Button
-        android:text="Schedule Appointment"
+        android:text="New Post"
         android:layout_width="match_parent"
         android:layout_height="70.9dp"
-        android:id="@+id/schedAppt"
+        android:id="@+id/newPost"
         android:layout_marginBottom="20dp"
         android:background="@android:color/holo_green_dark" />
     <Button
-        android:text="View Appointments"
+        android:text="View Posts"
         android:layout_width="match_parent"
         android:layout_height="70.9dp"
-        android:id="@+id/viewAppt"
+        android:id="@+id/viewPosts"
         android:layout_marginBottom="20dp"
-        android:background="@android:color/holo_green_dark" />
-    <Button
-        android:text="Forum"
-        android:layout_width="match_parent"
-        android:layout_height="70.9dp"
-        android:id="@+id/Forum"
-        android:layout_marginBottom="80.3dp"
         android:background="@android:color/holo_green_dark" />
 </LinearLayout>

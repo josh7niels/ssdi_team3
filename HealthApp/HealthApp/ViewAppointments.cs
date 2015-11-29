@@ -16,7 +16,7 @@ namespace HealthApp
     {
         ArrayAdapter adapter;
         IList<string> apptList, persistentData;
-        List<string> dateCause = new List<string>();
+        List<string> dateCauseTime = new List<string>();
         List<string> docTime = new List<string>();
         List<string> apptID = new List<string>();
         List<string> date = new List<string>();
@@ -26,16 +26,15 @@ namespace HealthApp
             apptList = Intent.GetStringArrayListExtra("appointments list");
             persistentData = Intent.GetStringArrayListExtra("persistent data");
             string[] myArray;
-            int a = apptList.Count;
-            for(int i=1; i<apptList.Count; i++)
+            for (int i = 1; i < apptList.Count; i++)
             {
                 myArray = apptList[i].Split(',');
                 date.Add(myArray[2]);
                 apptID.Add(myArray[0]);
-                dateCause.Add(myArray[2] + ", " + myArray[4]);
+                dateCauseTime.Add(myArray[2] + ", " + myArray[4] + ", " + myArray[3]);
                 docTime.Add(myArray[1] + ", " + myArray[3]);
             }
-            adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, dateCause);
+            adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, dateCauseTime);
             ListView.Adapter = adapter;
         }
         protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -68,14 +67,14 @@ namespace HealthApp
         private void deleteAppointmentEntry(int index)
         {
             date.RemoveAt(index);
-            dateCause.RemoveAt(index);
+            dateCauseTime.RemoveAt(index);
             docTime.RemoveAt(index);
             apptID.RemoveAt(index);
             adapter.NotifyDataSetChanged();
             DeletedAlert("The appointment you selected has been deleted");
             //ListView.RemoveViewAt(index);
         }
-        private void DeleteConfirmAlert(string failMessage, int position)
+        public void DeleteConfirmAlert(string failMessage, int position)
         {
             //build incorrect username/password alert and display when called
             AlertDialog.Builder alert = new AlertDialog.Builder(this);

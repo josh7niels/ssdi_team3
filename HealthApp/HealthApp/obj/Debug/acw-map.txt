@@ -1,3 +1,11 @@
+HealthApp.CreatePostActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.CreatePostActivity
+HealthApp.CreatePostActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.CreatePostActivity
+HealthApp.CreatePostActivity;md55a3b4471d8a42dd4103a971db2ef04d1.CreatePostActivity
+healthapp.CreatePostActivity;md55a3b4471d8a42dd4103a971db2ef04d1.CreatePostActivity
+HealthApp.ForumActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ForumActivity
+HealthApp.ForumActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ForumActivity
+HealthApp.ForumActivity;md55a3b4471d8a42dd4103a971db2ef04d1.ForumActivity
+healthapp.ForumActivity;md55a3b4471d8a42dd4103a971db2ef04d1.ForumActivity
 HealthApp.MainActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
 HealthApp.MainActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
 HealthApp.MainActivity;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
@@ -14,3 +22,11 @@ HealthApp.ViewAppointments, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAp
 HealthApp.ViewAppointments, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAppointments
 HealthApp.ViewAppointments;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAppointments
 healthapp.ViewAppointments;md55a3b4471d8a42dd4103a971db2ef04d1.ViewAppointments
+HealthApp.ViewApptsAdapter, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
+HealthApp.ViewApptsAdapter, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
+HealthApp.ViewApptsAdapter;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
+healthapp.ViewApptsAdapter;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
+HealthApp.ViewForumPosts, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
+HealthApp.ViewForumPosts, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
+HealthApp.ViewForumPosts;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
+healthapp.ViewForumPosts;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts

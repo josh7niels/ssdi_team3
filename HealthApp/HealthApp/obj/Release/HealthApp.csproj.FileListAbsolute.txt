@@ -27,3 +27,4 @@ C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\drawa
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\R.cs.flag
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\uploadflags.txt
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\HealthApp.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\apptview.xml

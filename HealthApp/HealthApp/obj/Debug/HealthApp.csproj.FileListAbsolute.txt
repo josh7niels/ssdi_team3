@@ -27,3 +27,6 @@ C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\drawabl
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\R.cs.flag
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\uploadflags.txt
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\HealthApp.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\apptview.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\forumpage.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\appointments.xml

@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Server
 {
-    class DeleteAppointment : IMessage
+    public class DeleteAppointment : IMessage
     {
         string apptID;
         List<string> sendBack = new List<string>();

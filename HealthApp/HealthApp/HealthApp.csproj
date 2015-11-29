@@ -60,12 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
+    <Compile Include="CreatePostActivity.cs" />
+    <Compile Include="ForumActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ProfileActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleAppointment.cs" />
     <Compile Include="ViewAppointments.cs" />
+    <Compile Include="ViewForumPosts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -74,6 +77,15 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ScheduleAppointment.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ApptView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ForumPage.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\appointments.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
