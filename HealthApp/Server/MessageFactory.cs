@@ -32,6 +32,12 @@ namespace Server
                     break;
                 case "07": myMessage = new BookAppointment(message[1], message[2], message[3], message[4]);
                     break;
+                case "08": myMessage = new FindPosts();
+                    break;
+                case "09": myMessage = new FindReplies(message[1]);
+                    break;
+                case "10": myMessage = new NewPost(message[1], message[2], message[3], message[4]);
+                    break;
                 /*default: myMessage = new LoginValidation("abc","123");
                     break;*/
             }

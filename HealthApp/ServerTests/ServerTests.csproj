@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DeleteAppointmentTests.cs" />
     <Compile Include="FindAppointmentsTests.cs" />
+    <Compile Include="FindPostsTests.cs" />
     <Compile Include="LoginValidationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

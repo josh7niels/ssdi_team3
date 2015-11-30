@@ -55,11 +55,14 @@
     <Compile Include="FindAppointments.cs" />
     <Compile Include="FindDates.cs" />
     <Compile Include="FindDoctors.cs" />
+    <Compile Include="FindPosts.cs" />
+    <Compile Include="FindReplies.cs" />
     <Compile Include="FindTimes.cs" />
     <Compile Include="IDBConnect.cs" />
     <Compile Include="LoginValidation.cs" />
     <Compile Include="MessageFactory.cs" />
     <Compile Include="IMessage.cs" />
+    <Compile Include="NewPost.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

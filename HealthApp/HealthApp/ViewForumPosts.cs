@@ -16,14 +16,22 @@ namespace HealthApp
     {
         ArrayAdapter adapter;
         IList<string> postsList, persistentData;
+        List<string> contentDate = new List<string>();
+        List<string> postID = new List<string>();
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            postsList = Intent.GetStringArrayListExtra("appointments list");
+            postsList = Intent.GetStringArrayListExtra("posts list");
             persistentData = Intent.GetStringArrayListExtra("persistent data");
-            // Create your application here
+            string[] myArray;
+            for (int i = 1; i < postsList.Count; i++)
+            {
+                myArray = postsList[i].Split(',');
+                contentDate.Add(myArray[1] + ", " + myArray[2]);
+                postID.Add(myArray[0]);
+            }
 
-            adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, postsList);
+            adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, contentDate);
             ListView.Adapter = adapter;
         }
         protected override void OnListItemClick(ListView l, View v, int position, long id)

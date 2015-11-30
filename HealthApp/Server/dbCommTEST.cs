@@ -31,6 +31,10 @@ namespace Server
                 case "03":
                     sendBack.Add("1");
                     break;
+                case "08":
+                    sendBack.Add("content, 12/01/2015, 09:00:00");
+                    sendBack.Add("content2, 12/02/2015, 10:10:10");
+                    break;
             }
             return sendBack;
         }

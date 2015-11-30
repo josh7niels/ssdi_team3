@@ -55,7 +55,7 @@ namespace Server
                             }
                         }
                         break;
-                    case "03"://type could be "getBoolean"
+                    case "03"://type could be "insert"
                         count = cmd.ExecuteNonQuery();
                         if (count == 1)
                             sendBack.Add("1");
@@ -70,6 +70,28 @@ namespace Server
                         if (reader.HasRows)
                             while (reader.Read())
                                 sendBack.Add(reader.GetString(0));
+                        break;
+                    case "08":
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                string appts = reader.GetString(0) + "," + reader.GetString(1) + "," + reader.GetString(2) + "," + reader.GetString(3);
+                                sendBack.Add(appts);
+                            }
+                        }
+                        break;
+                    case "09":
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                string appts = reader.GetString(0) + "," + reader.GetString(1) + "," + reader.GetString(2) + "," + reader.GetString(3);
+                                sendBack.Add(appts);
+                            }
+                        }
                         break;
                 }
             }
