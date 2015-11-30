@@ -37,6 +37,19 @@ namespace HealthApp
         protected override void OnListItemClick(ListView l, View v, int position, long id)
         {
             base.OnListItemClick(l, v, position, id);
+            List<string> recieved = new List<string>();
+            List<string> data = new List<string>();
+            List<string> postID = new List<string>();
+            Core myCore = new Core(persistentData);
+            data.Add("09");
+            data.Add(postID[position]);
+            recieved = myCore.messageHandler(data);
+            postID.Add(postID[position]);
+            Intent myIntent = new Intent(this, typeof(ViewPostDetail));
+            myIntent.PutStringArrayListExtra("replies list", recieved);
+            myIntent.PutStringArrayListExtra("persistent data", persistentData);
+            myIntent.PutStringArrayListExtra("post id", postID);
+            StartActivity(myIntent);
         }
     }
 }

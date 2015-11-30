@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffafafa">
+    <TextView
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="53.5dp"
+        android:id="@+id/editText1"
+        android:background="#ff1b5e20"
+        android:text="Anonymous: date and time"
+        android:scrollHorizontally="true"
+        android:textIsSelectable="true" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50.0dp"
+        android:id="@+id/space1" />
+    <EditText
+        android:text="please enter your response"
+        android:layout_width="match_parent"
+        android:layout_height="136.0dp"
+        android:id="@+id/replyContentText"
+        android:background="#ff1b5e20"
+        android:textIsSelectable="true"
+        android:scrollHorizontally="true"
+        android:enabled="true"
+        android:editable="true" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="54.0dp"
+        android:id="@+id/space2" />
+    <Button
+        android:text="submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addReplyButton"
+        android:background="#ff1b5e20" />
+</LinearLayout>
