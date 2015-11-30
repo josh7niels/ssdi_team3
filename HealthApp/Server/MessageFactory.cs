@@ -38,8 +38,11 @@ namespace Server
                     break;
                 case "10": myMessage = new NewPost(message[1], message[2], message[3], message[4]);
                     break;
-                /*default: myMessage = new LoginValidation("abc","123");
-                    break;*/
+                case "11": myMessage = new NewReply(message[1], message[2], message[3], message[4], message[5]);
+                    Console.WriteLine("case 11 reached");
+                    break;
+                    /*default: myMessage = new LoginValidation("abc","123");
+                        break;*/
             }
             return myMessage;
         }

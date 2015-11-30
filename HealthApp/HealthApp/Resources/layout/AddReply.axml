@@ -5,28 +5,25 @@
     android:layout_height="match_parent"
     android:background="#fffafafa">
     <TextView
-        android:inputType="textMultiLine"
         android:layout_width="match_parent"
-        android:layout_height="53.5dp"
-        android:id="@+id/editText1"
+        android:layout_height="60dp"
+        android:id="@+id/replyText"
         android:background="#ff1b5e20"
-        android:text="Anonymous: date and time"
-        android:scrollHorizontally="true"
-        android:textIsSelectable="true" />
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="Add Reply" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="50.0dp"
         android:id="@+id/space1" />
     <EditText
-        android:text="please enter your response"
+        android:text="please enter your response..."
         android:layout_width="match_parent"
-        android:layout_height="136.0dp"
-        android:id="@+id/replyContentText"
+        android:layout_height="120dp"
+        android:textColor="#ffffff"
         android:background="#ff1b5e20"
-        android:textIsSelectable="true"
-        android:scrollHorizontally="true"
-        android:enabled="true"
-        android:editable="true" />
+        android:gravity="left"
+        android:id="@+id/replyContentText" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="54.0dp"

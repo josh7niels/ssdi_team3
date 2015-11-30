@@ -11,4 +11,3 @@ C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Debug\Server.pdb
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\bin\Debug\MySql.Data.dll
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\obj\Debug\Server.exe
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\obj\Debug\Server.pdb
-C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache

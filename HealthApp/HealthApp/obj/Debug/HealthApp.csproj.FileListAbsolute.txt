@@ -30,3 +30,7 @@ C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\HealthApp.c
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\apptview.xml
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\forumpage.xml
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\appointments.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\viewpostdetail.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\replylist.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\addreply.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Debug\res\layout\addpost.xml

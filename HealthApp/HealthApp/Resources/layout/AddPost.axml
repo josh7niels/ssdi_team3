@@ -8,13 +8,9 @@
         android:text="Type your query..."
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/postContentText"
+        android:textColor="#ffffff"
         android:background="#ff1b5e20"
-        android:editable="true"
-        android:enabled="true"
-        android:textIsSelectable="true"
-        android:scrollHorizontally="true"
-        android:cursorVisible="true" />
+        android:id="@+id/postContentText" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="62.0dp"

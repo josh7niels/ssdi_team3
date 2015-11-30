@@ -27,7 +27,8 @@ namespace HealthApp
             for (int i = 1; i < postsList.Count; i++)
             {
                 myArray = postsList[i].Split(',');
-                contentDate.Add(myArray[1] + ", " + myArray[2]);
+                string date = myArray[2].Split(' ').First();
+                contentDate.Add(myArray[1] + ", " + date);
                 postID.Add(myArray[0]);
             }
 
@@ -39,7 +40,8 @@ namespace HealthApp
             base.OnListItemClick(l, v, position, id);
             List<string> recieved = new List<string>();
             List<string> data = new List<string>();
-            List<string> postID = new List<string>();
+            List<string> queryText = new List<string>();
+            queryText.Add(contentDate[position].Split(',').First());
             Core myCore = new Core(persistentData);
             data.Add("09");
             data.Add(postID[position]);
@@ -49,6 +51,7 @@ namespace HealthApp
             myIntent.PutStringArrayListExtra("replies list", recieved);
             myIntent.PutStringArrayListExtra("persistent data", persistentData);
             myIntent.PutStringArrayListExtra("post id", postID);
+            myIntent.PutStringArrayListExtra("query text", queryText);
             StartActivity(myIntent);
         }
     }

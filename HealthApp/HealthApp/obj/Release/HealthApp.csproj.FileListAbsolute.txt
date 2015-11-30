@@ -26,5 +26,10 @@ C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\value
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\drawable\icon.png
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\R.cs.flag
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\uploadflags.txt
-C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\HealthApp.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\apptview.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\forumpage.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\appointments.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\viewpostdetail.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\replylist.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\addreply.xml
+C:\Users\Admin\Source\Repos\ssdi_team3\HealthApp\HealthApp\obj\Release\res\layout\addpost.xml

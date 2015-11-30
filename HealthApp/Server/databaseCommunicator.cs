@@ -41,7 +41,10 @@ namespace Server
                             sendBack.Add(reader.GetString(0));
                         }
                         else
+                        {
                             sendBack.Add("0");
+                            sendBack.Add("null");
+                        }
                         break;
                     case "02"://type could be "getAllMultiplePerEntry"
                         reader = cmd.ExecuteReader();

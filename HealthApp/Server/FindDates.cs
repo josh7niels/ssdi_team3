@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Server
 {
-    class FindDates : IMessage
+    public class FindDates : IMessage
     {
         string doctor;
         List<string> sendBack = new List<string>();

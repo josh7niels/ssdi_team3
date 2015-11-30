@@ -34,14 +34,26 @@ namespace HealthApp
             List<string> recieved = new List<string>();
             List<string> data = new List<string>();
             data.Add("10");
+            data.Add(persistentData[1]);
             data.Add(postContent.Text);
+            data.Add(DateTime.Now.ToString("yyyy-MM-dd"));
+            data.Add(DateTime.Now.ToString("HH:mm:ss"));
+            if (postContent.Text == null || postContent.Text == "Type your query...")
+                postErrorMessage("Query cannot be blank");
+            else
             recieved = myCore.messageHandler(data);
             if (recieved[1] == "1")
-                scheduleMessage("Your question has been posted");
+                postQueryMessage("Your question has been posted");
             else
-                scheduleMessage("There was an error in your request. Please try again.");
+            {
+                recieved = myCore.messageHandler(data);
+                if (recieved[1] == "1")
+                    postQueryMessage("Your question has been posted");
+                else
+                    postErrorMessage("There was an error in your request. Please try again.");
+            }
         }
-        private void scheduleMessage(string message)
+        private void postQueryMessage(string message)
         {
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.SetTitle(message);
@@ -50,6 +62,18 @@ namespace HealthApp
                 Intent intent = new Intent(this, typeof(ForumActivity));
                 intent.PutStringArrayListExtra("persistent data", persistentData);
                 StartActivity(intent);
+            });
+            RunOnUiThread(() =>
+            {
+                alert.Show();
+            });
+        }
+        private void postErrorMessage(string message)
+        {
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.SetTitle(message);
+            alert.SetPositiveButton("Ok", (senderAlert, args) =>
+            {
             });
             RunOnUiThread(() =>
             {

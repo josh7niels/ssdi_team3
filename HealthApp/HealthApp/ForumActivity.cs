@@ -20,10 +20,10 @@ namespace HealthApp
         {
             base.OnCreate(bundle);
             persistentData = Intent.GetStringArrayListExtra("persistent data");
-            SetContentView(Resource.Layout.ProfilePage);
+            SetContentView(Resource.Layout.ForumPage);
             TextView welcome = FindViewById<TextView>(Resource.Id.forumView);
-            Button newPost = FindViewById<Button>(Resource.Id.newPost);
-            Button viewPosts = FindViewById<Button>(Resource.Id.viewPosts);
+            Button newPost = FindViewById<Button>(Resource.Id.newPostButton);
+            Button viewPosts = FindViewById<Button>(Resource.Id.viewPostsButton);
             newPost.Click += NewPost_Click;
             viewPosts.Click += ViewPosts_Click;
         }

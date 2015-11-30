@@ -1,3 +1,7 @@
+HealthApp.AddReply, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.AddReply
+HealthApp.AddReply, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.AddReply
+HealthApp.AddReply;md55a3b4471d8a42dd4103a971db2ef04d1.AddReply
+healthapp.AddReply;md55a3b4471d8a42dd4103a971db2ef04d1.AddReply
 HealthApp.CreatePostActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.CreatePostActivity
 HealthApp.CreatePostActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.CreatePostActivity
 HealthApp.CreatePostActivity;md55a3b4471d8a42dd4103a971db2ef04d1.CreatePostActivity
@@ -10,6 +14,10 @@ HealthApp.MainActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivi
 HealthApp.MainActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
 HealthApp.MainActivity;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
 healthapp.MainActivity;md55a3b4471d8a42dd4103a971db2ef04d1.MainActivity
+HealthApp.ViewApptsAdapter, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
+HealthApp.ViewApptsAdapter, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
+HealthApp.ViewApptsAdapter;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
+healthapp.ViewApptsAdapter;md55a3b4471d8a42dd4103a971db2ef04d1.ViewApptsAdapter
 HealthApp.ProfileActivity, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity
 HealthApp.ProfileActivity, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity
 HealthApp.ProfileActivity;md55a3b4471d8a42dd4103a971db2ef04d1.ProfileActivity
@@ -26,3 +34,7 @@ HealthApp.ViewForumPosts, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForu
 HealthApp.ViewForumPosts, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
 HealthApp.ViewForumPosts;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
 healthapp.ViewForumPosts;md55a3b4471d8a42dd4103a971db2ef04d1.ViewForumPosts
+HealthApp.ViewPostDetail, HealthApp;md55a3b4471d8a42dd4103a971db2ef04d1.ViewPostDetail
+HealthApp.ViewPostDetail, HealthApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a3b4471d8a42dd4103a971db2ef04d1.ViewPostDetail
+HealthApp.ViewPostDetail;md55a3b4471d8a42dd4103a971db2ef04d1.ViewPostDetail
+healthapp.ViewPostDetail;md55a3b4471d8a42dd4103a971db2ef04d1.ViewPostDetail

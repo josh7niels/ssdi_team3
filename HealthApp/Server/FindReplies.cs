@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Server
 {
-    class FindReplies : IMessage
+    public class FindReplies : IMessage
     {
         List<string> sendBack = new List<string>();
         List<string> databaseResponse = new List<string>();

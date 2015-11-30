@@ -8,7 +8,7 @@
     <TextView
         android:text="default"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="center"
+        android:gravity="left"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:id="@+id/PostText"
@@ -18,7 +18,7 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="378.2dp"
+        android:layout_height="200dp"
         android:id="@+id/postDetailView" />
     <Button
         android:text="Add Reply"

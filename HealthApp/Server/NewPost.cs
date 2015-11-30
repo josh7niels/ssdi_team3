@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Server
 {
-    class NewPost : IMessage
+    public class NewPost : IMessage
     {
         List<string> sendBack = new List<string>();
         List<string> databaseResponse = new List<string>();
@@ -31,8 +31,8 @@ namespace Server
             MySqlCommand a = new MySqlCommand(query);
             a.Parameters.AddWithValue("@mem_id", postID);
             a.Parameters.AddWithValue("@content", content);
-            a.Parameters.AddWithValue("@postDate", postDate);
-            a.Parameters.AddWithValue("@postTime", postTime);
+            a.Parameters.AddWithValue("@post_date", postDate);
+            a.Parameters.AddWithValue("@post_time", postTime);
             dbConnector.setValues(a, "03");
             databaseResponse = dbConnector.executeQuery();
             sendBack.Add("10");

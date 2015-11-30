@@ -51,10 +51,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BookAppointmentTests.cs" />
+    <Compile Include="databaseCommunicatorTests.cs" />
     <Compile Include="DeleteAppointmentTests.cs" />
     <Compile Include="FindAppointmentsTests.cs" />
+    <Compile Include="FindDatesTests.cs" />
+    <Compile Include="FindDoctorsTests.cs" />
     <Compile Include="FindPostsTests.cs" />
+    <Compile Include="FindRepliesTests.cs" />
+    <Compile Include="FindTimesTests.cs" />
     <Compile Include="LoginValidationTests.cs" />
+    <Compile Include="NewPostTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

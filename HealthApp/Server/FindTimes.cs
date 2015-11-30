@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Server
 {
-    class FindTimes : IMessage
+    public class FindTimes : IMessage
     {
         string apptDate, doctor;
         List<string> sendBack = new List<string> { "09:00:00", "10:00:00", "11:00:00", "12:00:00", "01:00:00", "02:00:00", "03:00:00", "04:00:00", "05:00:00"};
